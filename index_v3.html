@@ -7,10 +7,10 @@
                 position: fixed;
                 top: 0;
                 left: 0%;
-                width: 15%;
+                width: 20%;
                 height: 10%;
                 color: white;
-                font-size: 1.5vw;
+                font-size: 2.5vw;
             }
             #first {
                 background-color: black;
@@ -162,11 +162,24 @@
         <script>
             var x = 0, y = 0, k = 0, q = 0;
             function clear()    {
+                if (q >= 0)
                 document.getElementById('score').innerHTML = "Score: " + q;
+                else document.getElementById('score').innerHTML = "Score: 0";
                 if (k === 36)
                     document.getElementById('first').innerHTML = 'Congratulations! You Won! ^-^';
-                if (q === 0)
+                if (q === 0 || q + 1 === 0)
                     document.getElementById('first').innerHTML = 'You lost! :(';
+                if (q <= 0  || k === 36)    {
+                    document.getElementById("image1").draggable = 'false'; document.getElementById("image10").draggable = 'false'; document.getElementById("image19").draggable = 'false'; document.getElementById("image28").draggable = 'false';
+                    document.getElementById("image2").draggable = 'false'; document.getElementById("image11").draggable = 'false'; document.getElementById("image20").draggable = 'false'; document.getElementById("image29").draggable = 'false';
+                    document.getElementById("image3").draggable = 'false'; document.getElementById("image12").draggable = 'false'; document.getElementById("image21").draggable = 'false'; document.getElementById("image30").draggable = 'false';
+                    document.getElementById("image4").draggable = 'false'; document.getElementById("image13").draggable = 'false'; document.getElementById("image22").draggable = 'false'; document.getElementById("image31").draggable = 'false';
+                    document.getElementById("image5").draggable = 'false'; document.getElementById("image14").draggable = 'false'; document.getElementById("image23").draggable = 'false'; document.getElementById("image32").draggable = 'false';
+                    document.getElementById("image6").draggable = 'false'; document.getElementById("image15").draggable = 'false'; document.getElementById("image24").draggable = 'false'; document.getElementById("image33").draggable = 'false';
+                    document.getElementById("image7").draggable = 'false'; document.getElementById("image16").draggable = 'false'; document.getElementById("image25").draggable = 'false'; document.getElementById("image34").draggable = 'false';
+                    document.getElementById("image8").draggable = 'false'; document.getElementById("image17").draggable = 'false'; document.getElementById("image26").draggable = 'false'; document.getElementById("image35").draggable = 'false';
+                    document.getElementById("image9").draggable = 'false'; document.getElementById("image18").draggable = 'false'; document.getElementById("image27").draggable = 'false'; document.getElementById("image36").draggable = 'false';
+                }
                 else document.getElementById('first').innerHTML = '';
                 }
             function allowDrop(ev) {
@@ -208,6 +221,7 @@
                     var data = ev.dataTransfer.getData('text');
                     document.getElementById(data).style='height:20vh; width:20vh;';
                     ev.target.appendChild(document.getElementById(data));
+                    document.getElementById(data).draggable = 'false';
                     document.getElementById('first').innerHTML = 'Correct ^-^';
                     q++;
                     setTimeout(clear, 1000);
