@@ -170,15 +170,15 @@
                 if (q === 0 || q + 1 === 0)
                     document.getElementById('first').innerHTML = 'You lost! :(';
                 if (q <= 0  || k === 36)    {
-                    document.getElementById("image1").draggable = 'false'; document.getElementById("image10").draggable = 'false'; document.getElementById("image19").draggable = 'false'; document.getElementById("image28").draggable = 'false';
-                    document.getElementById("image2").draggable = 'false'; document.getElementById("image11").draggable = 'false'; document.getElementById("image20").draggable = 'false'; document.getElementById("image29").draggable = 'false';
-                    document.getElementById("image3").draggable = 'false'; document.getElementById("image12").draggable = 'false'; document.getElementById("image21").draggable = 'false'; document.getElementById("image30").draggable = 'false';
-                    document.getElementById("image4").draggable = 'false'; document.getElementById("image13").draggable = 'false'; document.getElementById("image22").draggable = 'false'; document.getElementById("image31").draggable = 'false';
-                    document.getElementById("image5").draggable = 'false'; document.getElementById("image14").draggable = 'false'; document.getElementById("image23").draggable = 'false'; document.getElementById("image32").draggable = 'false';
-                    document.getElementById("image6").draggable = 'false'; document.getElementById("image15").draggable = 'false'; document.getElementById("image24").draggable = 'false'; document.getElementById("image33").draggable = 'false';
-                    document.getElementById("image7").draggable = 'false'; document.getElementById("image16").draggable = 'false'; document.getElementById("image25").draggable = 'false'; document.getElementById("image34").draggable = 'false';
-                    document.getElementById("image8").draggable = 'false'; document.getElementById("image17").draggable = 'false'; document.getElementById("image26").draggable = 'false'; document.getElementById("image35").draggable = 'false';
-                    document.getElementById("image9").draggable = 'false'; document.getElementById("image18").draggable = 'false'; document.getElementById("image27").draggable = 'false'; document.getElementById("image36").draggable = 'false';
+                    document.getElementById("image1").setAttribute('draggable', false); document.getElementById("image10").setAttribute('draggable', false); document.getElementById("image19").setAttribute('draggable', false); document.getElementById("image28").setAttribute('draggable', false);
+                    document.getElementById("image2").setAttribute('draggable', false); document.getElementById("image11").setAttribute('draggable', false); document.getElementById("image20").setAttribute('draggable', false); document.getElementById("image29").setAttribute('draggable', false);
+                    document.getElementById("image3").setAttribute('draggable', false); document.getElementById("image12").setAttribute('draggable', false); document.getElementById("image21").setAttribute('draggable', false); document.getElementById("image30").setAttribute('draggable', false);
+                    document.getElementById("image4").setAttribute('draggable', false); document.getElementById("image13").setAttribute('draggable', false); document.getElementById("image22").setAttribute('draggable', false); document.getElementById("image31").setAttribute('draggable', false);
+                    document.getElementById("image5").setAttribute('draggable', false); document.getElementById("image14").setAttribute('draggable', false); document.getElementById("image23").setAttribute('draggable', false); document.getElementById("image32").setAttribute('draggable', false);
+                    document.getElementById("image6").setAttribute('draggable', false); document.getElementById("image15").setAttribute('draggable', false); document.getElementById("image24").setAttribute('draggable', false); document.getElementById("image33").setAttribute('draggable', false);
+                    document.getElementById("image7").setAttribute('draggable', false); document.getElementById("image16").setAttribute('draggable', false); document.getElementById("image25").setAttribute('draggable', false); document.getElementById("image34").setAttribute('draggable', false);
+                    document.getElementById("image8").setAttribute('draggable', false); document.getElementById("image17").setAttribute('draggable', false); document.getElementById("image26").setAttribute('draggable', false); document.getElementById("image35").setAttribute('draggable', false);
+                    document.getElementById("image9").setAttribute('draggable', false); document.getElementById("image18").setAttribute('draggable', false); document.getElementById("image27").setAttribute('draggable', false); document.getElementById("image36").setAttribute('draggable', false);
                 }
                 else document.getElementById('first').innerHTML = '';
                 }
@@ -221,7 +221,7 @@
                     var data = ev.dataTransfer.getData('text');
                     document.getElementById(data).style='height:20vh; width:20vh;';
                     ev.target.appendChild(document.getElementById(data));
-                    document.getElementById(data).draggable = 'false';
+                    document.getElementById(data).setAttribute('draggable', false);
                     document.getElementById('first').innerHTML = 'Correct ^-^';
                     q++;
                     setTimeout(clear, 1000);
